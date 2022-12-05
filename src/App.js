@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import {getArticles} from "./api"
 import ArticlesList from './components/ArticlesList';
+import PreviewArticle from './components/PreviewArticle';
 function App() {
   getArticles()
   return (
@@ -11,7 +12,11 @@ function App() {
       <div className="App">
         <Header></Header>
         <Nav/>
-        <ArticlesList></ArticlesList>
+        <Routes>
+          <Route path="/" element={<ArticlesList/>}/>
+          <Route path='/articles/:article_id' element={<PreviewArticle/>}/>
+        </Routes>
+
       </div>
     </BrowserRouter>
   );
