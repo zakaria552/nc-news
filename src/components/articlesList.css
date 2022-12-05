@@ -1,0 +1,25 @@
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.article {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 5px;
+    padding: 5px;
+    margin-left: 40px;
+    font-size: 1.2rem;
+}
+.vote-container {
+    display: flex;
+    padding: 5px;
+}
+@media only screen and (max-width: 600px) {
+    .article {
+        width: 75%;
+    }
+}
