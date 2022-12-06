@@ -1,0 +1,31 @@
+#comment_loading {
+    margin-left: 45%;
+}
+#comment_loading > * {
+    color: rgb(233, 44, 44);
+}
+.comment {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #3A3B3C;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+#comment__avatar {
+    width: 40px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.comment__profile {
+    display: flex;
+    align-items: center;
+}
+.comment__profile h6 {
+    color: aliceblue;
+}
+.comment__body {
+    margin-left: 40px;
+}
