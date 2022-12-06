@@ -1,3 +1,11 @@
+.loading {
+    text-align: center;
+    margin-left: 45%;
+    margin-top: 30px;
+}
+.loading > * {
+    color: rgb(233, 44, 44);
+}
 .article-list {
     display: flex;
     flex-wrap: wrap;
