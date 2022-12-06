@@ -3,17 +3,12 @@ import Article from "./Article"
 import {getArticles} from "../api"
 import "./articlesList.css"
 function ArticlesList() {
-    console.log("??")
     const [articles, setArticles] = useState([])
-    
     useEffect(() => {
-        console.log("rendeing first")
         getArticles().then((body) => {
-            console.log(body)
             setArticles(body)
         })
     }, [])
-    console.log("then")
     return (
         <ul className="article-list">
             { 
