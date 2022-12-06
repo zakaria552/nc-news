@@ -1,25 +1,70 @@
+.loading {
+    text-align: center;
+    margin-left: 45%;
+    margin-top: 30px;
+}
+.loading > * {
+    color: rgb(233, 44, 44);
+}
 .article-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: rgb(182, 177, 177);
+    padding-top: 35px;
 }
 .article {
     list-style: none;
     display: flex;
     flex-direction: column;
+    margin: 10px;
+    padding: 15px;
+}
+.article {
+    background-color: #242526;
+    border-radius: 15px;
     width: 40%;
-    margin: 5px;
-    padding: 5px;
     margin-left: 40px;
     font-size: 1.2rem;
 }
 .vote-container {
     display: flex;
     padding: 5px;
+    justify-content: space-between;
+}
+.vote-container p {
+    align-self: end;
+}
+a {
+    text-decoration: none;
+    font-style: none;
+}
+.article a:visited{
+    text-decoration: none;
+    color: rgb(104, 104, 104);
+}
+.article a:link {
+    color: rgb(135, 131, 131);
+}
+.article h3:hover{
+    text-decoration: underline;
+    color: #f9b2b5;
 }
 @media only screen and (max-width: 600px) {
     .article {
         width: 75%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .article {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .article {
+        width: 40%;
     }
 }

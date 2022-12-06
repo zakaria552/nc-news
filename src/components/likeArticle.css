@@ -1,0 +1,33 @@
+.like-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.like-container p {
+    margin-right: 5px;
+    align-self: flex-end;
+}
+.article__like {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+.article__dislike {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.article__like:hover {
+    font-size: 1.2em;
+    transition-duration: 500ms;
+    filter: drop-shadow(-4px -4px red) invert(80%)
+
+}
+.article__dislike:hover {
+    font-size: 1.2em;
+    transition-duration:300ms;
+    filter: drop-shadow(4px 4px rgb(46, 160, 247)) invert(150%)
+}
