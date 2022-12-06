@@ -19,7 +19,7 @@ function Nav({toggleTheme, setToggleTheme}) {
                 <Link>Articles</Link>
                 <Link>Topics</Link>
             </div>
-            <FormControlLabel control={<Switch color="primary" onChange={toggleHandle}/>} label="light-mode"></FormControlLabel>
+            <FormControlLabel control={<Switch color="primary" onChange={toggleHandle}/>} label={toggleTheme ? "light-mode": "dark-mode"}></FormControlLabel>
         </ul>
     )
 }
