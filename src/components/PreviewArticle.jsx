@@ -13,6 +13,7 @@ function PreviewArticle() {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         getArticleById(article_id).then((article) => {
+            setIsLoading(true)
             setArticle(article)
             setIsLoading(false)
         })
