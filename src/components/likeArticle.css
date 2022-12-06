@@ -31,3 +31,15 @@
     transition-duration:300ms;
     filter: drop-shadow(4px 4px rgb(46, 160, 247)) invert(150%)
 }
+
+.article__like--active {
+    font-size: 1.2em;
+    transition-duration: 500ms;
+    filter: drop-shadow(-4px -4px red) invert(80%)
+
+}
+.article__dislike--active {
+    font-size: 1.2em;
+    transition-duration:300ms;
+    filter: drop-shadow(4px 4px rgb(46, 160, 247)) invert(150%)
+}

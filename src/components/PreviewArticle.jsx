@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import {params, useParams} from "react-router-dom"
 import {getArticleById} from "../api"
 import Comments from "./Comments"
-import LikeArticle from "./LikeArticle"
+import {LikeArticle} from "./LikeArticle"
 import "./previewArticle.css"
 import { CircularProgress } from '@mui/material'
 import {formatDate} from "../utils"
