@@ -54,7 +54,7 @@
     height: 500px
 }
 .article-preview > * {
-    margin-left: 10px;
+    margin: 10px;
 }
 
 @media only screen and (max-width: 900px) {

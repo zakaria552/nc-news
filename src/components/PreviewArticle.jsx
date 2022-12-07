@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import {params, useParams} from "react-router-dom"
 import {getArticleById} from "../api"
+import Comments from "./Comments"
 import LikeArticle from "./LikeArticle"
 import "./previewArticle.css"
 import { CircularProgress } from '@mui/material'
@@ -12,6 +13,7 @@ function PreviewArticle() {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         getArticleById(article_id).then((article) => {
+            setIsLoading(true)
             setArticle(article)
             setIsLoading(false)
         })
@@ -31,6 +33,7 @@ function PreviewArticle() {
                     <p>{article.body}</p>
                 </div>
                 <LikeArticle article={article}></LikeArticle>
+                <Comments article_id={article_id}></Comments>
             </div>
             <div className="articles">
                 <h5>more articles</h5>
