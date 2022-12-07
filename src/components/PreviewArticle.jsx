@@ -6,6 +6,7 @@ import {LikeArticle} from "./LikeArticle"
 import "./previewArticle.css"
 import { CircularProgress } from '@mui/material'
 import {formatDate} from "../utils"
+import ArticlesList from "./ArticlesList"
 
 function PreviewArticle() {
     const [article, setArticle] = useState({})
@@ -35,8 +36,9 @@ function PreviewArticle() {
                 <LikeArticle article={article}></LikeArticle>
                 <Comments article_id={article_id}></Comments>
             </div>
-            <div className="articles">
-                <h5>more articles</h5>
+            <div className="more__articles">
+                <h2>More relevent articles</h2>
+                <ArticlesList/>
             </div>
         </div>
     )

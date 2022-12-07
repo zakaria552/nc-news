@@ -47,16 +47,28 @@
     margin-left: 5px;
     color: rgb(207, 237, 232);
 }
-.articles {
-    background-color: bisque;
-    margin-left: 5%;
-    width: 300px;
-    height: 500px
-}
 .article-preview > * {
     margin: 10px;
 }
+.articles {
+    background-color: bisque;
+    margin-left: 5%;
+    width: 40%;
+}
+.more__articles {
+    width: 40%;
+}
+.more__articles ul {
+    justify-content: start;
 
+}
+.more__articles li {
+    width: 100%;
+}
+.more__articles h2 {
+    color: rgb(237, 76, 76);
+    text-align: center;
+}
 @media only screen and (max-width: 900px) {
     .article-preview {
         width: 75%;
