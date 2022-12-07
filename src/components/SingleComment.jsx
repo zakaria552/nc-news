@@ -1,6 +1,6 @@
 import "./comments.css"
 import {formatDate} from "../utils"
-import LikeArticle from "./LikeArticle"
+import {LikeArticle, LikeComment} from "./LikeArticle"
 function SingleComment({comment}) {
     return (
         <li className="comment">
@@ -11,7 +11,7 @@ function SingleComment({comment}) {
             </div>
             <div className="comment__body">
                 <p>{comment.body}</p>
-                <LikeArticle article={comment}></LikeArticle>
+                <LikeComment comment={comment}></LikeComment>
             </div>
         </li>
     )
