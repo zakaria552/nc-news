@@ -1,21 +1,31 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import {params, useParams} from "react-router-dom"
-import {getArticleById} from "../api"
+import {getArticleById, getComments, getUser} from "../api"
 import Comments from "./Comments"
 import {LikeArticle} from "./LikeArticle"
 import "./previewArticle.css"
 import { CircularProgress } from '@mui/material'
 import {formatDate} from "../utils"
 import ArticlesList from "./ArticlesList"
+import {UserContext} from "../contexts/User"
 
 function PreviewArticle() {
     const [article, setArticle] = useState({})
     const {article_id} = useParams()
     const [isLoading, setIsLoading] = useState(true)
+    const [showComments, setShowComments] = useState(false)
+    const [author, setAuthor] = useState({})
+    const {user, setUser} = useContext(UserContext)
+
     useEffect(() => {
+        console.log(user)
+        setIsLoading(true)
+        setShowComments(false)
         getArticleById(article_id).then((article) => {
-            setIsLoading(true)
             setArticle(article)
+            return getUser(article.author)
+        }).then((user) => {
+            setAuthor(user)
             setIsLoading(false)
         })
     }, [article_id])
@@ -23,7 +33,7 @@ function PreviewArticle() {
         <div className="preview-container">
             <div className="article-preview">
                 <div className="article__profile">
-                    <img alt="author_img" src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?b=1&s=170667a&w=0&k=20&c=-qQGlKM8OQsSJCEkHnqS9FI94VRTkZ-7tg0K0u02XL0=" ></img>
+                    <img alt="author_img" src={author.avatar_url} ></img>
                     <div>
                     <h4>{article.author}</h4>
                         <i>{formatDate(article.created_at).getTime} · {formatDate(article.created_at).getDate}</i>
@@ -33,8 +43,14 @@ function PreviewArticle() {
                     <h5>{article.title}</h5>
                     <p>{article.body}</p>
                 </div>
-                <LikeArticle article={article}></LikeArticle>
-                <Comments article_id={article_id}></Comments>
+                <div className="comment-like-container">
+                    <p
+                        className="comment_button" 
+                        onClick={() => setShowComments(true)}>💬 Comments
+                    </p>
+                    <LikeArticle article={article}></LikeArticle>
+                </div>
+                {showComments ? <Comments article_id={article_id}/>: ""}
             </div>
             <div className="more__articles">
                 <h2>More relevent articles</h2>

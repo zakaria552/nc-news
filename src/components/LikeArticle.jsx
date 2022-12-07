@@ -31,7 +31,9 @@ export const LikeArticle = ({article}) => {
 }
 export const LikeComment = ({comment}) => {
     const [vote, setVote] = useState(0)
-    const [votes, setVotes] = useState(comment.votes)
+    console.log(comment.votes)
+    const [commentVotes, setCommentVotes] = useState(comment.votes)
+    console.log(commentVotes, "votes of posted comment", comment.author)
     const handleLike = () => {
         vote === 1 ? setVote(0): setVote(1);
     }
@@ -40,7 +42,7 @@ export const LikeComment = ({comment}) => {
     }
     return (
         <div className="like-container">
-            <p>votes: {votes}</p>
+            <p>votes: {commentVotes}</p>
             <button className="article__like" >👍</button>
             <button className="article__dislike" >👎</button>
         </div>

@@ -5,10 +5,9 @@
 
 body {
   background-color: #18191A;
-  height: fit-content;
+  height: 100%;
 }
-
 .App--light {
   background-color: #d0d8df;
-  height: fit-content;
+  height: 100%;
 }

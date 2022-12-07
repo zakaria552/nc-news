@@ -3,6 +3,7 @@ import { getComments } from "../api"
 import SingleComment from "./SingleComment"
 import "./comments.css"
 import { CircularProgress } from '@mui/material'
+import PostComment from "./PostComment"
 
 function Comments({article_id}) {
   const [comments, setComments] = useState([])
@@ -15,11 +16,16 @@ function Comments({article_id}) {
     })
   }, [article_id])
   return isLoading ? <CircularProgress id="comment_loading" /> :  (
+    <div>
+
+        <PostComment article_id = {article_id} comments={comments} setComments={setComments}></PostComment>
       <ul className="comments">
+        {console.log(comments)}
         {comments.map((comment) => {
-          return <SingleComment comment={comment}/>
+          return <SingleComment key={comment.created_at} comment={comment}/>
         })}  
       </ul>
+    </div>
   )
 }
 
