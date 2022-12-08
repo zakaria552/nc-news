@@ -20,7 +20,6 @@ function Comments({article_id}) {
 
         <PostComment article_id = {article_id} comments={comments} setComments={setComments}></PostComment>
       <ul className="comments">
-        {console.log(comments)}
         {comments.map((comment) => {
           return <SingleComment key={comment.created_at} comment={comment}/>
         })}  

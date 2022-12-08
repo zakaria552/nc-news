@@ -31,9 +31,7 @@ export const LikeArticle = ({article}) => {
 }
 export const LikeComment = ({comment}) => {
     const [vote, setVote] = useState(0)
-    console.log(comment.votes)
     const [commentVotes, setCommentVotes] = useState(comment.votes)
-    console.log(commentVotes, "votes of posted comment", comment.author)
     const handleLike = () => {
         vote === 1 ? setVote(0): setVote(1);
     }

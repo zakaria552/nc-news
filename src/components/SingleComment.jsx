@@ -8,7 +8,6 @@ function SingleComment({comment}) {
     const [authorName, setAuthorName] = useState(comment.author)
     useEffect(() => {
         getUser(comment.author).then((user) => {
-            console.log(user, "api return")
             setAuthor(user)
         })
     }, [])
