@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const ncNews = axios.create({
-    baseURL: "https://inquisitive-cyan-gabardine.cyclic.app/api"
+    baseURL: "https://nc-news-9og4.onrender.com/api"
 })
 
 export const getArticles = () => {
@@ -50,5 +50,11 @@ export const postComment = (user, comment_body, article_id) => {
 export const getUsers = () => {
     return ncNews.get("/users").then((res) => {
         return res.data.users
+    })
+}
+
+export const getArticlesByTopic = (topic) => {
+    return ncNews.get("/articles").then((res) => {
+        return res.data.articles.filter((article) => article.topic === topic)
     })
 }

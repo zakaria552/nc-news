@@ -23,10 +23,10 @@ function App() {
             {login & !user.isLoggedIn ? <LoginPop></LoginPop>: ""}
             <Routes>
               <Route path="/" element={<ArticlesList/>}/>
-              <Route path='/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
-              <Route path="/articles/:coding" element={<SingleTopic/>}/>
-              <Route path="/articles/:cooking" element={<SingleTopic/>}/>
-              <Route path="/articles/:football" element={<SingleTopic/>}/>
+              <Route path='articles/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
+              <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
+              <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
+              <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
             </Routes>
           </div>
         </Login.Provider>

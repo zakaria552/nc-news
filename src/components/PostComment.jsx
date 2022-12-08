@@ -9,6 +9,7 @@ function PostComment({article_id, setRenderComments, renderComments, setFailedTo
     const {setLogin} = useContext(Login)
     const submitHandle = (e) => {
         e.preventDefault()
+        e.target.disabled = true
         setFailedToPost(false)
         if(!user.isLoggedIn) {
             setLogin(true)
@@ -16,24 +17,28 @@ function PostComment({article_id, setRenderComments, renderComments, setFailedTo
             postComment(user.username, comment, article_id).then((res) => {
                 renderComments ? setRenderComments(false): setRenderComments(true)
                 setComment("")
+                e.target.disabled = false
             }).catch(() => {
                 console.log("failed to comment")
                 setFailedToPost(true)
+                e.target.disabled = false
             })
         }
     }
 
     return (
         <div>
-            <form className="comment__form" onSubmit={submitHandle}>
-                <input
+            <form className="comment__form" >
+                <textarea
                     type="text"
                     className="comment__field" 
                     placeholder="leave a comment"
                     value={comment}
                     onChange={(e) => {setComment(e.target.value)}}
-                    required></input>
-                <button type="submit" >post</button>
+                    required
+                    
+                    ></textarea>
+                <button type="button" onClick={submitHandle}>post</button>
             </form>
         </div>
     )

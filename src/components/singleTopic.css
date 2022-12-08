@@ -1,0 +1,11 @@
+.single-topic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-topic h2 {
+    margin-top: 25px;
+    color: rgb(239, 108, 108);
+}
