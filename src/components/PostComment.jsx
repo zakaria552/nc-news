@@ -13,6 +13,8 @@ function PostComment({article_id, setRenderComments, renderComments, setFailedTo
         setFailedToPost(false)
         if(!user.isLoggedIn) {
             setLogin(true)
+            e.target.disabled = false
+
         } else {
             postComment(user.username, comment, article_id).then((res) => {
                 renderComments ? setRenderComments(false): setRenderComments(true)
