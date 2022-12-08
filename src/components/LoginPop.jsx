@@ -7,7 +7,7 @@ function LoginPop () {
     const [username, setUsername] = useState("")
     const {user, setUser} = useContext(UserContext)
     const {setLogin} = useContext(Login)
-    const [invalidUser, setInvalidUser] = useState(true)
+    const [invalidUser, setInvalidUser] = useState(false)
     const [validUsers, setValidUsers] = useState([])
     
     useEffect(() => {
@@ -19,7 +19,7 @@ function LoginPop () {
     const handleSubmit = (e) => {
         e.preventDefault()
         const userObj = validUsers.find((validUser) => validUser.username === username)
-        userObj ? setUser({...userObj, isLoggedIn: true}): setInvalidUser(false);
+        userObj ? setUser({...userObj, isLoggedIn: true}): setInvalidUser(true);
         userObj ? setLogin(false): setLogin(true)
         setUsername("")
     }
@@ -38,7 +38,8 @@ function LoginPop () {
                 placeholder="watson" 
                 onChange={(e) => setUsername(e.target.value)}
                 />
-            <span>invalid user</span>
+            
+            {invalidUser ? <span>invalid user</span> : "" }
             <button type="submit">submit</button>
         </form>
     )
