@@ -28,7 +28,10 @@ function Nav({toggleTheme, setToggleTheme}) {
                 <h1>nc-news</h1>
                 <Link to="/">Home</Link>
                 <Link>Articles</Link>
-                <Link to="/topics">Topics</Link>
+                <Link to="articles/coding">Coding</Link>
+                <Link to="articles/cooking">Cooking</Link>
+                <Link to="articles/football">Football</Link>
+
                 <i class="fa-light fa-user"></i>
                 <FontAwesomeIcon icon={faUser} />
                 <FontAwesomeIcon icon="fa-light fa-user" />
