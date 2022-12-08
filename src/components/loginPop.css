@@ -19,7 +19,6 @@
     padding: 7px;
 }
 .login-form {
-    display: none;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -32,6 +31,7 @@
     font-size: 25px;
     cursor: pointer;
 }
-.login-form--active{
-    top: 40%;
+
+.login-from--show{
+    display: block;
 }
