@@ -35,7 +35,7 @@ function LoginPop () {
             <input 
                 type="text" 
                 value={username} 
-                placeholder="watson" 
+                placeholder="grumpy19" 
                 onChange={(e) => setUsername(e.target.value)}
                 />
             

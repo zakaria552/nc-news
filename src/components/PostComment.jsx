@@ -3,22 +3,24 @@ import "./postComment.css"
 import {UserContext} from "../contexts/User"
 import { Login } from "../contexts/Login"
 import { postComment } from "../api"
-function PostComment({comments, setComments, article_id}){
+function PostComment({article_id, setRenderComments, renderComments, setFailedToPost}){
     const [comment, setComment] = useState("")
-    const {user, setUser} = useContext(UserContext)
+    const {user} = useContext(UserContext)
     const {setLogin} = useContext(Login)
-    const loginPop = document.getElementsByClassName("login-form")
     const submitHandle = (e) => {
         e.preventDefault()
-        console.log(user)
+        setFailedToPost(false)
         if(!user.isLoggedIn) {
             setLogin(true)
         } else {
-            const commentObj = {author: user.username, body: comment, votes: 0, created_at: new Date()}
-            setComments([commentObj, ...comments])
-            postComment(user.username, comment, article_id)
+            postComment(user.username, comment, article_id).then((res) => {
+                renderComments ? setRenderComments(false): setRenderComments(true)
+                setComment("")
+            }).catch(() => {
+                console.log("failed to comment")
+                setFailedToPost(true)
+            })
         }
-        setComment("")
     }
 
     return (
@@ -31,7 +33,7 @@ function PostComment({comments, setComments, article_id}){
                     value={comment}
                     onChange={(e) => {setComment(e.target.value)}}
                     required></input>
-                <button type="submit">post</button>
+                <button type="submit" >post</button>
             </form>
         </div>
     )
