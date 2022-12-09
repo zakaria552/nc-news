@@ -1,8 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
 import Nav from './components/Nav';
-import {getArticles} from "./api"
 import ArticlesList from './components/ArticlesList';
 import PreviewArticle from './components/PreviewArticle';
 import {useState} from "react"
