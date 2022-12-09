@@ -1,5 +1,5 @@
 import "./sortBy.css"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -13,6 +13,10 @@ import Box from '@mui/material/Box';
 
 function SortBy() {
     const [sortBy, setSortBy] = useState("") 
+    const [order, setOrder] = useState("desc")
+    useEffect(() => {
+
+    }, [SortBy])
     return (
         <div className="filter">
             <h2>Filter</h2>
@@ -24,11 +28,11 @@ function SortBy() {
                     id="demo-simple-select"
                     value={sortBy}
                     label="Age"
-                    onChange={(e) => console.log(e.target.value)}
+                    onChange={(e) => setSortBy(e.target.value)}
                     >
-                    <MenuItem value={10}>Upload date</MenuItem>
-                    <MenuItem value={20}>Comment count</MenuItem>
-                    <MenuItem value={30}>Votes</MenuItem>
+                    <MenuItem value={"created_at"}>Upload date</MenuItem>
+                    <MenuItem value={"comment_count"}>Comment count</MenuItem>
+                    <MenuItem value={"votes"}>Votes</MenuItem>
                     </Select>
                 </FormControl>
             </Box>
@@ -39,6 +43,7 @@ function SortBy() {
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="decs"
                     name="radio-buttons-group"
+                    onChange={(e) => console.log(e.target.value)}
                 >
                     <FormControlLabel id="sort-radio" value="decs" control={<Radio />} label="decs" />
                     <FormControlLabel id="sort-radio" value="asc" control={<Radio />} label="asc" />
