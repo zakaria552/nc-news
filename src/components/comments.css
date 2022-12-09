@@ -30,3 +30,15 @@
 .comment__body {
     margin-left: 40px;
 }
+.comment__delete {
+    display: none;
+    margin-left: auto;
+    margin-top: auto;
+    align-self: flex-start;
+    margin-top: 0;
+    cursor: pointer;
+    color: rgb(158, 83, 83);
+}
+.comment__delete--show {
+    display: flex;
+}

@@ -24,7 +24,7 @@ function Comments({article_id}) {
         {failedToPost ? <span>failed to post, try again</span>: ""}
       <ul className="comments">
         {comments.map((comment) => {
-          return <SingleComment  key={comment.created_at} comment={comment}/>
+          return <SingleComment  key={comment.created_at} setComments={setComments} comments={comments} comment={comment}/>
         })}  
       </ul>
     </div>
