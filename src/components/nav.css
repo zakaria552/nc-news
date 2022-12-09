@@ -39,3 +39,21 @@
 .nav-left--light a {
     color: #3A3B3C;
 }
+.account img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.account {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+}
+.account h3 {
+    margin-right: 5px;
+}
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

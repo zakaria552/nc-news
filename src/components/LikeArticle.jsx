@@ -24,14 +24,20 @@ export const LikeArticle = ({article}) => {
     return (
         <div className="like-container">
             <p>votes: {votes + vote}</p>
-            <button className={`article__like ${vote === 1 ? "article__like--active": ""}`} onClick={handleLike}>👍</button>
-            <button className={`article__dislike  ${vote === -1 ? "article__dislike--active": ""}`} onClick={handleDislike}>👎</button>
+            <button
+                className={`article__like ${vote === 1 ? "article__like--active": ""}`} 
+                onClick={handleLike}
+                ><span role="img">👍</span></button>
+            <button 
+                className={`article__dislike  ${vote === -1 ? "article__dislike--active": ""}`} 
+                onClick={handleDislike}
+                ><span role="img">👎</span></button>
         </div>
     )
 }
 export const LikeComment = ({comment}) => {
     const [vote, setVote] = useState(0)
-    const [votes, setVotes] = useState(comment.votes)
+    const [commentVotes, setCommentVotes] = useState(comment.votes)
     const handleLike = () => {
         vote === 1 ? setVote(0): setVote(1);
     }
@@ -40,7 +46,7 @@ export const LikeComment = ({comment}) => {
     }
     return (
         <div className="like-container">
-            <p>votes: {votes}</p>
+            <p>votes: {commentVotes}</p>
             <button className="article__like" >👍</button>
             <button className="article__dislike" >👎</button>
         </div>

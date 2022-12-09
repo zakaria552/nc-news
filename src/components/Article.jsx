@@ -2,10 +2,8 @@ import "./articlesList.css"
 import {Link} from "react-router-dom"
 import {LikeArticle} from "./LikeArticle"
 import {formatDate} from "../utils"
-import { CircularProgress } from '@mui/material'
 
 function Article({article}) {
-    console.log(article.created_at)
     return (
         <li className="article">
             <Link to={`/articles/${article.article_id}`}> <h3>{article.title}</h3></Link>

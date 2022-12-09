@@ -3,6 +3,7 @@ import Article from "./Article"
 import {getArticles} from "../api"
 import "./articlesList.css"
 import { CircularProgress } from '@mui/material'
+import SortBy from "./SortBy"
 function ArticlesList() {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -14,12 +15,15 @@ function ArticlesList() {
         })
     }, [])
     return isLoading ? <CircularProgress className="loading" />: (
-        <ul className="article-list">
-            { 
-            articles.map((article) => {
-                return <Article key={article.article_id} article={article}></Article>
-            })}
-        </ul>
+        <div className="wrapper">
+            <SortBy></SortBy>
+            <ul className="article-list">
+                { 
+                articles.map((article) => {
+                    return <Article key={article.article_id} article={article}></Article>
+                })}
+            </ul>
+        </div>
     )
 }
 

@@ -38,6 +38,7 @@
 
 .article-preview img{
     width: 60px;
+    height: 60px;
     align-self:flex-end;
     border-radius: 50%;
 }
@@ -68,6 +69,28 @@
 .more__articles h2 {
     color: rgb(237, 76, 76);
     text-align: center;
+}
+.comment-like-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comment_button {
+    border: none;
+    width: fit-content;
+    padding: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: aliceblue;
+    cursor: pointer;
+    text-align: center;
+}
+.comment_button:hover {
+    border: 1px solid rgb(147, 142, 142);
+    border-radius: 15px;
+    background-color: #3A3B3C;
 }
 @media only screen and (max-width: 900px) {
     .article-preview {
