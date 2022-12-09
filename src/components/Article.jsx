@@ -2,7 +2,6 @@ import "./articlesList.css"
 import {Link} from "react-router-dom"
 import {LikeArticle} from "./LikeArticle"
 import {formatDate} from "../utils"
-import { CircularProgress } from '@mui/material'
 
 function Article({article}) {
     return (
