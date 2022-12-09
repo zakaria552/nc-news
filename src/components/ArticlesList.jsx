@@ -4,19 +4,20 @@ import {getArticles} from "../api"
 import "./articlesList.css"
 import { CircularProgress } from '@mui/material'
 import SortBy from "./SortBy"
-function ArticlesList() {
+import { useSearchParams, useParams } from "react-router-dom"
+function ArticlesList({params}) {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [searchParams, setSearchParams] = useSearchParams()
     useEffect(() => {
-        getArticles().then((body) => {
-            setIsLoading(true)
+        setIsLoading(true)
+        getArticles(params).then((body) => {
             setArticles(body)
             setIsLoading(false)
         })
-    }, [])
+    }, [searchParams])
     return isLoading ? <CircularProgress className="loading" />: (
         <div className="wrapper">
-            <SortBy></SortBy>
             <ul className="article-list">
                 { 
                 articles.map((article) => {
