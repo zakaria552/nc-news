@@ -1,5 +1,5 @@
 import "./sortBy.css"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -11,8 +11,16 @@ import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
 
 
-function SortBy() {
+function SortBy({setSearchParams}) {
     const [sortBy, setSortBy] = useState("") 
+    const [order, setOrder] = useState("desc")
+
+    useEffect(() => {
+        sortBy.length ? setSearchParams({sort_by: sortBy, order: order}): setSearchParams({})
+    }, [sortBy, order])
+    const handleChange = (e) => {
+        setSortBy(e.target.value)
+    }
     return (
         <div className="filter">
             <h2>Filter</h2>
@@ -24,11 +32,11 @@ function SortBy() {
                     id="demo-simple-select"
                     value={sortBy}
                     label="Age"
-                    onChange={(e) => console.log(e.target.value)}
+                    onChange={handleChange}
                     >
-                    <MenuItem value={10}>Upload date</MenuItem>
-                    <MenuItem value={20}>Comment count</MenuItem>
-                    <MenuItem value={30}>Votes</MenuItem>
+                    <MenuItem value={"created_at"}>Upload date</MenuItem>
+                    <MenuItem value={"comment_count"}>Comment count</MenuItem>
+                    <MenuItem value={"votes"}>Votes</MenuItem>
                     </Select>
                 </FormControl>
             </Box>
@@ -37,11 +45,15 @@ function SortBy() {
                 <RadioGroup
                     row
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="decs"
+                    value={order}
                     name="radio-buttons-group"
+                    onChange={(e) => {
+                        console.log(order,)
+                        setOrder(e.target.value)
+                    }}
                 >
-                    <FormControlLabel id="sort-radio" value="decs" control={<Radio />} label="decs" />
-                    <FormControlLabel id="sort-radio" value="asc" control={<Radio />} label="asc" />
+                    <FormControlLabel id="sort-radio" value="desc" control={<Radio />} label="descending " />
+                    <FormControlLabel id="sort-radio" value="asc" control={<Radio />} label="ascending" />
                 </RadioGroup>
             </FormControl>
         </div>

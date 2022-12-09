@@ -8,6 +8,7 @@ import {UserContext} from "./contexts/User"
 import {Login} from "./contexts/Login"
 import LoginPop from './components/LoginPop';
 import SingleTopic from './components/SingleTopic';
+import ArticlesContainer from './components/ArticlesContainer';
 function App() {
   const [toggleTheme, setToggleTheme] = useState(false)
   const [user, setUser] = useState({isLoggedIn: false})
@@ -20,7 +21,7 @@ function App() {
             <Nav toggleTheme={toggleTheme} setToggleTheme={setToggleTheme}/>
             {login & !user.isLoggedIn ? <LoginPop></LoginPop>: ""}
             <Routes>
-              <Route path="/" element={<ArticlesList/>}/>
+              <Route path="/" element={<ArticlesContainer/>}/>
               <Route path='articles/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
               <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
             </Routes>

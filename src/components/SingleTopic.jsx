@@ -7,19 +7,17 @@ import "./singleTopic.css"
 function SingleTopic () {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const topic = useParams().topic
-
+    const param = useParams()
     useEffect(() => {
-        getArticles(topic).then((articles) => {
+        getArticles(param).then((articles) => {
             console.log(articles)
             setArticles(articles)
             setIsLoading(false)
         })
-    }, [topic])
-    console.log(useParams())
+    }, [param.topic])
     return isLoading ? <CircularProgress className="loading" />: (
         <div className="single-topic">
-            <h2>{`Articles relating to ${topic}`}</h2>
+            <h2>{`Articles relating to ${param.topic}`}</h2>
         <ul className="article-list">
             { 
             articles.map((article) => {
