@@ -12,7 +12,6 @@
 .filter {
     display: flex;
     align-items: center;
-    width: 100% ;
     height: fit-content;
     color: rgb(104, 139, 169);
     margin: 5px;
