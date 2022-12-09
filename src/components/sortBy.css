@@ -1,0 +1,33 @@
+#sort-radio {
+    color: rgb(197, 204, 209);
+}
+.sort-radio span {
+    color: red;
+}
+
+#demo-radio-buttons-group-label {
+    color: rgb(215, 211, 211);
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    width: 100% ;
+    height: fit-content;
+    color: rgb(104, 139, 169);
+    margin: 5px;
+    margin-bottom: 0;
+    background-color: #242526;
+}
+.filter > * {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+#demo-simple-select-label {
+    color: white;
+}
+#filter-radio {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+}

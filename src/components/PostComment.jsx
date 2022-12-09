@@ -34,7 +34,7 @@ function PostComment({article_id, setRenderComments, renderComments, setFailedTo
                 <textarea
                     type="text"
                     className="comment__field" 
-                    placeholder="leave a comment"
+                    placeholder="Write a comment"
                     value={comment}
                     onChange={(e) => {setComment(e.target.value)}}
                     required

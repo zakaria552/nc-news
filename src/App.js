@@ -25,8 +25,6 @@ function App() {
               <Route path="/" element={<ArticlesList/>}/>
               <Route path='articles/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
               <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
-              <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
-              <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
             </Routes>
           </div>
         </Login.Provider>

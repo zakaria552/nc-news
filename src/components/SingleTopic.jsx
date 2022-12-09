@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
 import {useEffect, useState} from "react"
-import { getArticlesByTopic } from "../api"
+import { getArticlesByTopic, getArticles } from "../api"
 import Article from "./Article"
 import { CircularProgress } from '@mui/material'
 import "./singleTopic.css"
@@ -10,7 +10,7 @@ function SingleTopic () {
     const topic = useParams().topic
 
     useEffect(() => {
-        getArticlesByTopic(topic).then((articles) => {
+        getArticles(topic).then((articles) => {
             console.log(articles)
             setArticles(articles)
             setIsLoading(false)

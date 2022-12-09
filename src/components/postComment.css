@@ -21,9 +21,12 @@
 }
 .comment__form button {
     padding: 5px;
-    width: fit-content
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+
 }
-.comment__form input:focus {
+.comment__form textarea:focus {
     outline-width: 0px;
     border: 1.2px solid #898c8e;
 }
