@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { getComments } from "../api"
 import SingleComment from "./SingleComment"
 import "./comments.css"
 import { CircularProgress } from '@mui/material'
 import PostComment from "./PostComment"
+import { ThemeContext } from "../contexts/Theme"
 
 function Comments({article_id}) {
   const [comments, setComments] = useState([])
   const [isLoading, setIsloading] = useState(true)
   const [failedToPost, setFailedToPost] = useState(false)
   const [renderComments, setRenderComments] = useState(false)
+  const {toggleTheme} = useContext(ThemeContext)
   useEffect(() => {
     setIsloading(true)
     getComments(article_id).then((comments) => {
@@ -24,7 +26,7 @@ function Comments({article_id}) {
         {failedToPost ? <span>failed to post, try again</span>: ""}
       <ul className="comments">
         {comments.map((comment) => {
-          return <SingleComment  key={comment.created_at} comment={comment}/>
+          return <SingleComment  key={comment.created_at} setComments={setComments} comments={comments} comment={comment}/>
         })}  
       </ul>
     </div>

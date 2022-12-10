@@ -2,21 +2,26 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 30px;
-    width: 400px;
-    background-color:antiquewhite
+    width: 30%;
+    height: 35%;
+    background-color: #f4bcbff1;
+}
+.login-form ul {
+    background-color: antiquewhite;
 }
 .login-form > * {
     margin: 3px;
 }
 .login-form button {
-    width: 100px
+    width: 100px;
 }
 .login-form input {
     width: 200px;
-    padding: 7px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 .login-form {
     top: 40%;
@@ -34,4 +39,15 @@
 
 .login-from--show{
     display: block;
+}
+
+.login-form li {
+    margin-left: auto;
+    list-style: none;
+
+
+}
+.login-form img {
+    width: 80px;
+    height: 80px;
 }

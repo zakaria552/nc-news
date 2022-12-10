@@ -8,9 +8,11 @@ import { useContext, useState } from 'react';
 import LoginPop from './LoginPop';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faUser} from '@fortawesome/free-solid-svg-icons'
-function Nav({toggleTheme, setToggleTheme}) {  
+import { ThemeContext } from '../contexts/Theme';
+function Nav() {  
     const {user} = useContext(UserContext)
     const {login, setLogin} = useContext(Login)
+    const {toggleTheme, setToggleTheme} = useContext(ThemeContext)
 
     const toggleHandle = () => {
         if(toggleTheme) {
@@ -31,20 +33,14 @@ function Nav({toggleTheme, setToggleTheme}) {
                 <Link to="articles/topics/coding">Coding</Link>
                 <Link to="articles/topics/cooking">Cooking</Link>
                 <Link to="articles/topics/football">Football</Link>
-
-                {/* <i class="fa-light fa-user"></i> */}
-                {/* <FontAwesomeIcon icon={faUser} />
-                <FontAwesomeIcon icon="fa-light fa-user" /> */}
             </div>
-            <div className="nav-right">
+            <div className={`nav-right ${toggleTheme? "nav-right--light": ""}`}>
                 {user.isLoggedIn ? (
                     <div className='account'>
-                        {/* <i class="fa-light fa-user"></i> */}
                         <h3>{user.username}</h3>
                         <img alt="profile-picture" src={user.avatar_url}></img>
                     </div>
                 )
-                
                 : <Link onClick={signHandler}>Log in</Link>}
                 <FormControlLabel control={<Switch color="primary" onChange={toggleHandle}/>} label={toggleTheme ? "light-mode": "dark-mode"}></FormControlLabel>
             </div>

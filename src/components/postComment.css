@@ -20,11 +20,23 @@
     background-color: #3A3B3C;
 }
 .comment__form button {
-    padding: 5px;
-    width: 80px;
-    height: 40px;
-    border-radius: 10px;
-
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    background-color: #3A3B3C;
+    padding: 0px;
+    width: 70px;
+    border-radius: 20px;
+    margin-left: 7px;
+    font-size: 17px;
+    color: #7d7e80;
+}
+.comment__form button:hover {
+    border: 1.5px double #f9b2b5;
+    color: #f9b2b5;
+}
+.comment__form--light button {
+    background-color: #d7dadc;
 }
 .comment__form textarea:focus {
     outline-width: 0px;
@@ -32,4 +44,7 @@
 }
 .comment_form textarea::-webkit-scrollbar {
     width: 0px;
+}
+.comment__form--light textarea {
+    background-color: #d7dadc;
 }

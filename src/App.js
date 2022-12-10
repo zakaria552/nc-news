@@ -6,6 +6,7 @@ import PreviewArticle from './components/PreviewArticle';
 import {useState} from "react"
 import {UserContext} from "./contexts/User"
 import {Login} from "./contexts/Login"
+import { ThemeContext } from './contexts/Theme';
 import LoginPop from './components/LoginPop';
 import SingleTopic from './components/SingleTopic';
 import ArticlesContainer from './components/ArticlesContainer';
@@ -17,15 +18,17 @@ function App() {
     <BrowserRouter>
       <UserContext.Provider value={{user, setUser}}>
         <Login.Provider value={{login, setLogin}}>
-          <div className={`App ${toggleTheme ? "App--light": ""}`} >
-            <Nav toggleTheme={toggleTheme} setToggleTheme={setToggleTheme}/>
-            {login & !user.isLoggedIn ? <LoginPop></LoginPop>: ""}
-            <Routes>
-              <Route path="/" element={<ArticlesContainer/>}/>
-              <Route path='articles/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
-              <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
-            </Routes>
-          </div>
+          <ThemeContext.Provider value={{toggleTheme, setToggleTheme}}>
+            <div className={`App ${toggleTheme ? "App--light": ""}`} >
+              <Nav toggleTheme={toggleTheme} setToggleTheme={setToggleTheme}/>
+              {login & !user.isLoggedIn ? <LoginPop></LoginPop>: ""}
+              <Routes>
+                <Route path="/" element={<ArticlesContainer/>}/>
+                <Route path='articles/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
+                <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
+              </Routes>
+            </div>
+          </ThemeContext.Provider>
         </Login.Provider>
       </UserContext.Provider>
     </BrowserRouter>

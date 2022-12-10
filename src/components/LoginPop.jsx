@@ -28,7 +28,7 @@ function LoginPop () {
             <p onClick={(e) => {
                  setLogin(false)
             }}>x</p>
-            <h2>log in</h2>
+            <h1>log in</h1>
             <label>
                 username
             </label>
@@ -41,6 +41,12 @@ function LoginPop () {
             
             {invalidUser ? <span>invalid user</span> : "" }
             <button type="submit">submit</button>
+                <h2>available users in the database</h2>
+                <div>
+                    {validUsers.map((user) => {
+                        return <h4>{user.username}</h4>
+                    })}
+                </div>
         </form>
     )
 }
