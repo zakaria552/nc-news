@@ -34,6 +34,14 @@
     margin-left: 40px;
     font-size: 1.2rem;
 }
+.article--light {
+    background-color: #ffffff7e;
+    color: #242526;
+}
+.article--light i {
+    color: #242526;
+}
+
 .vote-container {
     display: flex;
     padding: 5px;

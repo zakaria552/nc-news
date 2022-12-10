@@ -13,7 +13,12 @@
     border-radius: 10px;
     margin: 10px 0px;
 }
-
+.comment--light {
+    background-color: #D0D8DF;
+}
+.comment--light {
+    background-color: #D0D8DF;
+}
 #comment__avatar {
     width: 40px;
     height: 40px;
@@ -26,6 +31,9 @@
 }
 .comment__profile h6 {
     color: aliceblue;
+}
+.comment__profile--light h6 {
+    color: #242526;
 }
 .comment__body {
     margin-left: 40px;

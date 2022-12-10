@@ -2,7 +2,6 @@
     margin-top: 35px;
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
     padding: auto;
 }
 .article__profile {
@@ -19,6 +18,10 @@
     background-color: #242526;
     border-radius: 15px;
 }
+.article-preview--light {
+    background-color: #ffffff7e;
+}
+
 .article-preview__body {
     margin-left: 7px;
 }
@@ -35,7 +38,10 @@
     font-size: 25px;
     margin-top: 8px;
 }
+.article-preview--light p, h4, h5{
+    color: #242526;
 
+}
 .article-preview img{
     width: 60px;
     height: 60px;
@@ -50,6 +56,13 @@
 }
 .article-preview > * {
     margin: 10px;
+}
+.article-preview--light i{
+    color: #242526;
+
+}
+.article__profile--light div > * {
+    color: #242526;
 }
 .articles {
     background-color: bisque;

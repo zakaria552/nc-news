@@ -8,7 +8,7 @@ import { CircularProgress } from '@mui/material'
 import {formatDate} from "../utils"
 import ArticlesList from "./ArticlesList"
 import {UserContext} from "../contexts/User"
-
+import { ThemeContext } from "../contexts/Theme"
 function PreviewArticle() {
     const [article, setArticle] = useState({})
     const {article_id} = useParams()
@@ -16,6 +16,7 @@ function PreviewArticle() {
     const [showComments, setShowComments] = useState(false)
     const [author, setAuthor] = useState({})
     const {user, setUser} = useContext(UserContext)
+    const {toggleTheme} = useContext(ThemeContext)
 
     useEffect(() => {
         console.log(user)
@@ -30,13 +31,13 @@ function PreviewArticle() {
         })
     }, [article_id])
     return isLoading ? <CircularProgress className="loading" /> : (
-        <div className="preview-container">
-            <div className="article-preview">
-                <div className="article__profile">
+        <div className={`preview-container ${toggleTheme ? "preview-container--light" : ""}`}>
+            <div className={`article-preview ${toggleTheme ? "article-preview--light" : ""}`}>
+                <div className={`article__profile ${toggleTheme ? "article__profile--light" : ""}`}>
                     <img alt="author_img" src={author.avatar_url} ></img>
                     <div>
                     <h4>{article.author}</h4>
-                        <i>{formatDate(article.created_at).getTime} · {formatDate(article.created_at).getDate}</i>
+                    <i>{formatDate(article.created_at).getTime} · {formatDate(article.created_at).getDate}</i>
                     </div>
                 </div>
                 <div className="article-preview__body">
