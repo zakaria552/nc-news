@@ -12,13 +12,15 @@
     align-items: center;
     justify-content: center;
 }
+.wrapper li {
+    margin-left: 10px;
+}
 .article-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     color: rgb(182, 177, 177);
-    padding-top: 35px;
 }
 .article {
     list-style: none;

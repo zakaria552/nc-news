@@ -1,13 +1,15 @@
 import ArticlesList from "./ArticlesList";
 import { useSearchParams } from "react-router-dom";
-import SortBy from "./SortBy";
+import Filter from "./Filter"
 
 function ArticlesContainer( ) {
     const [searchParams, setSearchParams] = useSearchParams()
+    
     const params = {sort_by: searchParams.get("sort_by"), order: searchParams.get("order")}
     return (
-        <div>
-            <SortBy setSearchParams={setSearchParams}></SortBy>
+        <div className="articles-container">
+            <Filter setSearchParams={setSearchParams}></Filter>
+            {/* <SortBy setSearchParams={setSearchParams}></SortBy> */}
             <ArticlesList searchParams={searchParams} params={params}></ArticlesList>
         </div>
     )

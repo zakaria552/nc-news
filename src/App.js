@@ -10,6 +10,7 @@ import { ThemeContext } from './contexts/Theme';
 import LoginPop from './components/LoginPop';
 import SingleTopic from './components/SingleTopic';
 import ArticlesContainer from './components/ArticlesContainer';
+import SingleTopicContainer from './components/SingleTopicContainer';
 function App() {
   const [toggleTheme, setToggleTheme] = useState(false)
   const [user, setUser] = useState({isLoggedIn: false})
@@ -25,7 +26,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<ArticlesContainer/>}/>
                 <Route path='articles/:article_id' element={<PreviewArticle toggleTheme={toggleTheme}/>}/>
-                <Route path="articles/topics/:topic" element={<SingleTopic/>}/>
+                <Route path="articles/topics/:topic" element={<SingleTopicContainer/>}/>
               </Routes>
             </div>
           </ThemeContext.Provider>

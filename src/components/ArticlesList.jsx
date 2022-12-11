@@ -3,7 +3,6 @@ import Article from "./Article"
 import {getArticles} from "../api"
 import "./articlesList.css"
 import { CircularProgress } from '@mui/material'
-import SortBy from "./SortBy"
 import { useSearchParams, useParams } from "react-router-dom"
 function ArticlesList({params}) {
     const [articles, setArticles] = useState([])

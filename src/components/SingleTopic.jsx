@@ -4,17 +4,16 @@ import { getArticlesByTopic, getArticles } from "../api"
 import Article from "./Article"
 import { CircularProgress } from '@mui/material'
 import "./singleTopic.css"
-function SingleTopic () {
+function SingleTopic ({params}) {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const param = useParams()
     useEffect(() => {
-        getArticles(param).then((articles) => {
-            console.log(articles)
+        getArticles({...params, ...param}).then((articles) => {
             setArticles(articles)
             setIsLoading(false)
         })
-    }, [param.topic])
+    }, [param.topic, params])
     return isLoading ? <CircularProgress className="loading" />: (
         <div className="single-topic">
             <h2>{`Articles relating to ${param.topic}`}</h2>

@@ -28,8 +28,7 @@ function Nav() {
         <ul className={`nav ${toggleTheme? "nav--light": ""}`}>
             <div className={`nav-left ${toggleTheme? "nav-left--light": ""}`}>
                 <h1>nc-news</h1>
-                <Link to="/">Home</Link>
-                <Link>Articles</Link>
+                <Link to="/">Articles</Link>
                 <Link to="articles/topics/coding">Coding</Link>
                 <Link to="articles/topics/cooking">Cooking</Link>
                 <Link to="articles/topics/football">Football</Link>
