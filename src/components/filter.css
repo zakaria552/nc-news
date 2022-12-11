@@ -1,0 +1,48 @@
+.filter-container {
+    padding-top: 35px;
+    display: flex;
+    align-self: flex-end;
+    margin-right: 5%;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.filter-container button {
+    background:none;
+    border: none;
+    font-size: 2em;
+    color: rgb(216, 214, 214);
+    cursor: pointer;
+    margin-left: 7px;
+}
+.filter-container.light button {
+    color: #414243;
+}
+.filter-container button:hover {
+    color: #f9b2b5;
+}
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.selecter, option {
+    font-family: Arial, sans-serif;
+}
+.selecter {
+    outline: none;
+    width: 300px;
+    background-color: #242526;
+    border-radius: 10px;
+    margin-right: 7px;
+    color: rgb(155, 152, 152);
+}
+.filter-container.light select {
+    background-color: #E8EBEF;
+    color: rgb(90, 90, 90);
+
+}
+.singletopic__container {
+    display: flex;
+    flex-direction: column;
+}

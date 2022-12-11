@@ -109,4 +109,12 @@
     .article-preview {
         width: 75%;
     }
+    .more__articles {
+        width: 75%;
+        margin-left: 10%;
+    }
+    .more__articles h2 {
+        margin-top: 30px;
+    }
 }
+
