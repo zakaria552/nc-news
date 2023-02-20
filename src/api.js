@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const ncNews = axios.create({
-    baseURL: "nc-news-api.up.railway.app/api"
+    baseURL: "https://nc-news-api.up.railway.app/api"
 })
 
 export const getArticles = (params) => {
