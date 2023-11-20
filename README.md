@@ -1,4 +1,5 @@
 ># nc-news
+[![security status](https://qa.meterian.io/badge/pb/b877af50-0f9c-4e2e-afd8-f3899099b226/security)](https://qa.meterian.io/projects/?pid=b877af50-0f9c-4e2e-afd8-f3899099b226) [![stability status](https://qa.meterian.io/badge/pb/b877af50-0f9c-4e2e-afd8-f3899099b226/stability)](https://qa.meterian.io/projects/?pid=b877af50-0f9c-4e2e-afd8-f3899099b226) [![licensing status](https://qa.meterian.io/badge/pb/b877af50-0f9c-4e2e-afd8-f3899099b226/licensing)](https://qa.meterian.io/projects/?pid=b877af50-0f9c-4e2e-afd8-f3899099b226)
 ## Project summary
 
 This React website is a social news aggregation, web content rating, and discussion website. It has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using a back-end API project that I have created previously ([project repo](https://github.com/zakaria552/News-API)). Users can also leave comments about the article.
